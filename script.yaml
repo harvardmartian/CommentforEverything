@@ -1,0 +1,34 @@
+comment_for_everything:
+  alias: Comment For Everything
+  sequence:
+  - condition: template
+    value_template: '{{ states(''input_select.alexa_comments'') != '''' }}'
+  - service: notify.alexa_media
+    data_template:
+      message: <say-as interpret-as="interjection">{{ states('input_select.alexa_comments')
+        }}</say-as>
+      data:
+        type: tts
+      target: media_player.echo_show_5 # Change to your alexa device
+  - delay:
+      seconds: 1
+  - condition: template
+    value_template: '{{ states(''input_select.alexa_comments'') != '''' }}'
+  - service: notify.alexa_media
+    data_template:
+      message: <say-as interpret-as="interjection">{{ states('input_select.alexa_comments')
+        }}</say-as>
+      data:
+        type: tts
+      target: media_player.onelink_safe_sound
+  mode: single
+  icon: mdi:speaker
+random_comment_for_everything:
+  alias: Random Comment for Everything.
+  sequence:
+  - service: input_select.select_option
+    target:
+      entity_id: input_select.alexa_comments
+    data:
+      option: "{{ state_attr('input_select.alexa_comments', 'options')\n    | reject('eq',\
+        \ states('input_select.test'))\n    | list | random }}\n"

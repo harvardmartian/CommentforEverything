@@ -1,0 +1,25 @@
+alias: Comment For Everything
+description: Alexa scripts
+trigger:
+  - platform: state
+    entity_id: input_select.alexa_comments
+    id: alexa-select
+  - platform: state
+    entity_id: input_text.alexa_say
+    id: alexa-text
+condition: []
+action:
+  - choose:
+      - conditions:
+          - condition: trigger
+            id: alexa-select
+        sequence:
+          - service: script.comment_for_everything
+            data: {}
+      - conditions:
+          - condition: trigger
+            id: alexa-text
+        sequence:
+          - service: script.alexa_say
+            data: {}
+mode: single
