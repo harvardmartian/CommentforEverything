@@ -2,7 +2,7 @@ The project formerly known as 'My Echo Has Turrets Syndrome' (thank you forum) i
 
 # (Alexa has a) Comment for Everything.
 
-Are you ready to add some excitement to your **Home Assistant** automations?! Make your Smart Home come alive! With **Comment for Everything** your Alexa can share her thoughts about your home automation activities.  Would you like to hear alexa exclaim 'good riddance' with emotion when you close a door? Or maybe she'll say 'brrr' when your heater turns on?  Or perhaps she'll exclaim 'aww shucks' when your glass break detector is triggered? 
+Are you ready to add some excitement to your **Home Assistant** automations?! Make your Smart Home come alive! With **Comment for Everything** your Alexa can share her thoughts about your home automation activities.  Would you like to hear alexa exclaim 'good morning' with emotion when you close a door? Or maybe she'll say 'brrr' when your heater turns on?  Or perhaps she'll exclaim 'aww shucks' when your glass break detector is triggered? 
 
 Here is a small sample of the things she'll say:
 
@@ -19,7 +19,7 @@ Here is a small sample of the things she'll say:
 
 
 
-Alexa has hundreds of secret special words and phrases that she pronounces more expressively! And most importantly randomly. **Comment for Everything** incorporates nearly 300 of these words and phrases into **Home Assistant**! Phrases are spoken with emotion and not in a flat drone. Works with almost any Echo device! She speaks with emotion, clarity and confidence.  We had to dig deep deep into the Echo developer documentation to unlock this secret feature and now we're brining it to you absolutely free!
+Alexa has hundreds of secret special words and phrases that she pronounces more expressively! And most importantly randomly. **Comment for Everything** incorporates nearly 300 of these words and phrases into **Home Assistant**! Phrases are spoken with emotion and not in a flat drone. Works with almost any Echo device! She speaks with emotion, clarity and confidence.  We had to dig deep deep into the Echo developer documentation to unlock this secret feature and now we're bringing it to you absolutely free!
 
 "Endless possibilities!" "Hours of entertainment!" "Amaze your friends!" "Suprising results!"
 
@@ -70,7 +70,16 @@ The File Editor add-on is as easy as anything.
 **Explanation**: The scripts send the word or phrase from the helper to your echo device which will say it.
 ```yaml
 comment_for_everything:
-  alias: Comment for Everything
+  alias: Random Comment for Everything.
+  sequence:
+  - service: input_select.select_option
+    target:
+      entity_id: input_select.alexa_comments
+    data:
+      option: "{{ state_attr('input_select.alexa_comments', 'options')\n    | reject('eq',\
+        \ states('input_select.test'))\n    | list | random }}\n"
+alexa_comments:
+  alias: Comment for Everything Actions
   sequence:
   - condition: template
     value_template: '{{ states(''input_select.alexa_comments'') != '''' }}'
@@ -96,19 +105,10 @@ alexa_freestyle_comment:
         type: tts
       target: media_player.echo_show_5 #Change to your echo device
       
-random_comment_for_everything:
-  alias: Random Comment for Everything.
-  sequence:
-  - service: input_select.select_option
-    target:
-      entity_id: input_select.alexa_comments
-    data:
-      option: "{{ state_attr('input_select.alexa_comments', 'options')\n    | reject('eq',\
-        \ states('input_select.test'))\n    | list | random }}\n"
 ```
 Be sure to change the target to the name of one of your own actual echo devices.
 
-The third script is run your Echo device(s) will exclaim something randomly from the input_select helper you created in Step 1. 
+The main script is what chooses randomnly what your Echo device(s) will exclaim from the input_select helper you created in Step 1. 
 
 
 
@@ -138,7 +138,7 @@ action:
           - condition: trigger
             id: alexa-select
         sequence:
-          - service: script.comment_for_everything
+          - service: script.alexa_comments
             data: {}
       - conditions:
           - condition: trigger
@@ -148,7 +148,7 @@ action:
             data: {}
 mode: queued
 ```
-This automation will be triggered anytime there is a change to the helpers. IE when you press enter after you have typed into the text helper or when you've run the **script.random_comment_for_everything**
+This automation will be triggered anytime there is a change to the helpers. IE when you press enter after you have typed into the text helper or when you've run the **script.comment_for_everything**
 
 Step 5. Using the GUI create a text helper called Alexa Freestyle Comment
 or cut and paste code from file above.
@@ -158,7 +158,7 @@ Step 8. Restart HA if you get a passing score!
 
 After HA is back up and running test it by running:
 
-	script.random_comment_for_everything.
+	script.comment_for_everything.
 
 # Using Comment for Everything
 
@@ -166,7 +166,7 @@ After HA is back up and running test it by running:
 
  After you've installed the project files just add the following line to ANY automation after the **action:**
 ```yaml
-  - service: script.random_comment_for_everything
+  - service: script.comment_for_everything
     data: {}
 ``` 
 Every time this script is run your Echo device(s) will exclaim something randomly from the input_select helper you created in Step 1. 
@@ -189,11 +189,11 @@ How about a button-card for a lovelace page?
 ![Preview of the button-card](https://i.ibb.co/0CdB08m/button-card-image.png)
 ```yaml
 type: custom:button-card
-entity: script.random_comment_for_everything
+entity: script.comment_for_everything
 show_name: false
 tap_action:
   action: call-service
-  service: script.random_comment_for_everything
+  service: script.comment_for_everything
 tooltip: Alexa Comments
 icon: mdi:account-voice
 show_state: false
@@ -217,9 +217,9 @@ styles:
 Using the File Editor add-on to add the following to customize.yaml: Note: If you do not already have a file 'customize.yaml' go ahead and create it.
 
 
-    script.comment_for_everything:
+    script.alexa_comments:
       entity_picture: https://i.ibb.co/4Tj5syQ/alexaq.png
-    script.random_comment_for_everything:
+    script.comment_for_everything:
       entity_picture: https://i.ibb.co/4Tj5syQ/alexaq.png
 
 A restart is required to see results when you edit customize.yaml...
