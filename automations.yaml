@@ -1,11 +1,11 @@
 alias: Comment For Everything
-description: Alexa scripts
+description: Triggered by inputs then outputs to smart speaker.
 trigger:
   - platform: state
     entity_id: input_select.alexa_comments
     id: alexa-select
   - platform: state
-    entity_id: input_text.alexa_say
+    entity_id: input_text.alexa_freestyle_comment
     id: alexa-text
 condition: []
 action:
@@ -14,12 +14,12 @@ action:
           - condition: trigger
             id: alexa-select
         sequence:
-          - service: script.comment_for_everything
+          - service: script.alexa_comments
             data: {}
       - conditions:
           - condition: trigger
             id: alexa-text
         sequence:
-          - service: script.alexa_say
+          - service: script.alexa_freestyle_comment
             data: {}
-mode: single
+mode: qued

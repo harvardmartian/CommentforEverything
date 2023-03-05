@@ -2,7 +2,7 @@ The project formerly known as 'My Echo Has Turrets Syndrome' (thank you forum) i
 
 # (Alexa has a) Comment for Everything.
 
-Are you ready to add some excitement to your **Home Assistant** automations?! Make your Smart Home come alive! With **Comment for Everything** your Alexa can share her thoughts about your home automation activities.  Would you like to hear alexa exclaim 'good morning' with emotion when you close a door? Or maybe she'll say 'brrr' when your heater turns on?  Or perhaps she'll exclaim 'aww shucks' when your glass break detector is triggered? 
+Are you ready to add some excitement to your **Home Assistant** automations?! Make your Smart Home come alive! With **Comment for Everything** your Alexa will randomly comment about your home automation activities.  Would you like to hear alexa speak 'good _____ (evening, afternoon, riddance)' when a door closes? Or maybe she'll say 'brrr' while your heater turns on?  Or perhaps she'll exclaim 'aww shucks' when your glass break detector is triggered? 
 
 Here is a small sample of the things she'll say:
 
@@ -41,7 +41,7 @@ An Echo smart speaker is optional as the Alexa software can be installed on a la
 
 
  - 100% Free! Absolutely no upfront costs or hidden fees.
- -  Small file sizes. Very few lines of text to add. 
+ - Small file sizes. Very few lines of text to add. 
  - Nearly 300 Special Words and Phrases!   
  - Family friendly. Absolutely no distasteful or obscene language. 
  - Works with any number of Echo devices. Multiple Unlimited Echo devices!
@@ -150,7 +150,7 @@ mode: queued
 ```
 This automation will be triggered anytime there is a change to the helpers. IE when you press enter after you have typed into the text helper or when you've run the **script.comment_for_everything**
 
-Step 5. Using the GUI create a text helper called Alexa Freestyle Comment
+Step 5. Using the GUI create a text helper called Alexa Comment
 or cut and paste code from file above.
 
 Step 6. Check your configuration with Developer Tools.
@@ -225,3 +225,12 @@ Using the File Editor add-on to add the following to customize.yaml: Note: If yo
 A restart is required to see results when you edit customize.yaml...
 
 The Alexa Developer Documentation links have the information that is used for this project starts [here](https://developer.amazon.com/en-US/docs/alexa/custom-skills/speechcon-reference-interjections.html).
+
+# Testamonials
+
+What people are saying:
+"Comment for Everything is an essential addition to my Smart Home. It makes Home Assistant 1000 times more useful." Betty S.
+"The whole family loves how they never know what Alexa will say next." Bob J.
+"Last night when I closed the garage Alexa said 'man overboard' and my wife thought the Echo was broken! We laughed for hours." Jason T. 
+"It's fantastic! Alexa spits out a random phrase each time my outdoor motion sensor goes off.  Maybe it's another racoon in the trash? I don't know." Terrance W.
+

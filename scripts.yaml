@@ -1,5 +1,5 @@
-comment_for_everything:
-  alias: Comment For Everything
+alexa_comments:
+  alias: Comment For Everything Actions
   sequence:
   - condition: template
     value_template: '{{ states(''input_select.alexa_comments'') != '''' }}'
@@ -23,7 +23,7 @@ comment_for_everything:
       target: media_player.onelink_safe_sound
   mode: single
   icon: mdi:speaker
-random_comment_for_everything:
+comment_for_everything:
   alias: Random Comment for Everything.
   sequence:
   - service: input_select.select_option
