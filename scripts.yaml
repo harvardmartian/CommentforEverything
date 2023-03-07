@@ -1,28 +1,24 @@
-alexa_comments:
-  alias: Comment For Everything Actions
+# list each one of your echo devices in the script below
+comment_for_everything_devices:
+  alias: Echo devices that will speak the random Comment for Everything phrases
   sequence:
-  - condition: template
-    value_template: '{{ states(''input_select.alexa_comments'') != '''' }}'
-  - service: notify.alexa_media
-    data_template:
-      message: <say-as interpret-as="interjection">{{ states('input_select.alexa_comments')
-        }}</say-as>
-      data:
-        type: tts
-      target: media_player.echo_show_5 # Change to your alexa device
-  - delay:
-      seconds: 1
-  - condition: template
-    value_template: '{{ states(''input_select.alexa_comments'') != '''' }}'
-  - service: notify.alexa_media
-    data_template:
-      message: <say-as interpret-as="interjection">{{ states('input_select.alexa_comments')
-        }}</say-as>
-      data:
-        type: tts
-      target: media_player.onelink_safe_sound
-  mode: single
-  icon: mdi:speaker
+    - repeat:
+        for_each:
+          - media_player.echo_show_5
+          - media_player.onelink_safe_sound
+          - media_player.fire_tv
+        sequence:
+          - condition: template
+            value_template: "{{ states('input_select.alexa_comments') != '' }}"
+          - service: notify.alexa_media
+            data_template:
+              message: >-
+                <say-as interpret-as="interjection">{{
+                states('input_select.alexa_comments') }}</say-as>
+              data:
+                type: tts
+              target: "{{ repeat.item }}"
+# this script will pick a random comment from the dropdown and the automation will send it to the script above.
 comment_for_everything:
   alias: Random Comment for Everything.
   sequence:
@@ -32,3 +28,23 @@ comment_for_everything:
     data:
       option: "{{ state_attr('input_select.alexa_comments', 'options')\n    | reject('eq',\
         \ states('input_select.test'))\n    | list | random }}\n"
+# this script is for anything you type into the text box. again list each echo device you'd like to hear
+alexa_comment:
+  alias: Comment for Everything script
+  sequence:
+    - repeat:
+        for_each:
+          - media_player.echo_show_5
+          - media_player.onelink_safe_sound
+          - media_player.fire_tv
+        sequence:
+          - condition: template
+            value_template: "{{ states('input_text.alexa_comment') != '' }}"
+          - service: notify.alexa_media
+            data_template:
+              message: >-
+                <say-as interpret-as="interjection">{{
+                states('input_text.alexa_comment') }}</say-as>
+              data:
+                type: tts
+              target: "{{ repeat.item }}"

@@ -1,5 +1,7 @@
+
 The project formerly known as 'My Echo Has Turrets Syndrome' (thank you forum) is back with a new name. Introducting the all new:
 
+> "Amaze your Friends"  "Endless Possibilities!"
 # (Alexa has a) Comment for Everything.
 
 Are you ready to add some excitement to your **Home Assistant** automations?! Make your Smart Home come alive! With **Comment for Everything** your Alexa will randomly comment about your home automation activities.  Would you like to hear alexa speak 'good _____ (evening, afternoon, riddance)' when a door closes? Or maybe she'll say 'brrr' while your heater turns on?  Or perhaps she'll exclaim 'aww shucks' when your glass break detector is triggered? 
@@ -21,11 +23,17 @@ Here is a small sample of the things she'll say:
 
 Alexa has hundreds of secret special words and phrases that she pronounces more expressively! And most importantly randomly. **Comment for Everything** incorporates nearly 300 of these words and phrases into **Home Assistant**! Phrases are spoken with emotion and not in a flat drone. Works with almost any Echo device! She speaks with emotion, clarity and confidence.  We had to dig deep deep into the Echo developer documentation to unlock this secret feature and now we're bringing it to you absolutely free!
 
-"Endless possibilities!" "Hours of entertainment!" "Amaze your friends!" "Suprising results!"
+Look no further. (Alexa has a) **Comment For Everything** is for **Home Assistant** and it's absolutely free! **Comment for Everything** is easy to setup! And works with almost ANY automation (where the Everything comes from)! 
+
+
+> "Hours of entertainment!"  "Suprising results!"[**]
+
+ ** actual user comments
+
 
 All that is needed is a service call to a simple script and you'll hear Alexa blurt a random exclamation ANY time you'd like. Live alone? **Comment for Everything** will make you feel as if someone else is there with you! Need an audible alert when an automation stops or starts? **Comment for Everything** will do the job. Need feedback when a light goes on?
 
-Look no further. (Alexa has a) **Comment For Everything** is for **Home Assistant** and it's absolutely free! **Comment for Everything** is easy to setup! And works with almost ANY automation (where the Everything comes from)! 
+
 
 Unleash Alexa's hidden secret function in your smart home today! 
 
@@ -78,28 +86,40 @@ comment_for_everything:
     data:
       option: "{{ state_attr('input_select.alexa_comments', 'options')\n    | reject('eq',\
         \ states('input_select.test'))\n    | list | random }}\n"
-alexa_comments:
-  alias: Comment for Everything Actions
+comment_for_everything_devices:
+  alias: Echo devices that will speak the random Comment for Everything phrases
   sequence:
-  - condition: template
-    value_template: '{{ states(''input_select.alexa_comments'') != '''' }}'
-  - service: notify.alexa_media
-    data_template:
-      message: <say-as interpret-as="interjection">{{ states('input_select.alexa_comments')
-        }}</say-as>
-      data:
-        type: tts
-      target: media_player.echo_show_5 # Change to your alexa device
+    - repeat:
+        for_each:
+          - media_player.avacube
+          - media_player.echo_show_5
+          - media_player.onelink_safe_sound
+          - media_player.fire_tv
+          - media_player.guest_house_dashboard
+          - media_player.smart_life_panel
+        sequence:
+          - condition: template
+            value_template: "{{ states('input_select.alexa_comments') != '' }}"
+          - service: notify.alexa_media
+            data_template:
+              message: >-
+                <say-as interpret-as="interjection">{{
+                states('input_select.alexa_comments') }}</say-as>
+              data:
+                type: tts
+              target: "{{ repeat.item }}"
+mode: queued
+max: 10
       
-alexa_freestyle_comment:
-  alias: Alexa Freestyle Comment
+alexa_comment:
+  alias: Alexa Comment
   sequence:
   - condition: template
-    value_template: "{{ states('input_text.alexa_freestyle_comment') != '' }}"
+    value_template: "{{ states('input_text.alexa_comment') != '' }}"
   - service: notify.alexa_media
     data_template:
       message: >-
-        <say-as interpret-as="interjection">{{ states('input_text.alexa_freestyle_comment')
+        <say-as interpret-as="interjection">{{ states('input_text.alexa_comment')
         }}</say-as>
       data:
         type: tts
@@ -129,7 +149,7 @@ trigger:
     entity_id: input_select.alexa_comments
     id: alexa-select
   - platform: state
-    entity_id: input_text.alexa_freestyle_comment
+    entity_id: input_text.alexa_comment
     id: alexa-text
 condition: []
 action:
@@ -138,13 +158,13 @@ action:
           - condition: trigger
             id: alexa-select
         sequence:
-          - service: script.alexa_comments
+          - service: script.comment_for_everything_devices
             data: {}
       - conditions:
           - condition: trigger
             id: alexa-text
         sequence:
-          - service: script.alexa_freestyle_comment
+          - service: script.alexa_comment
             data: {}
 mode: queued
 ```
@@ -164,7 +184,7 @@ After HA is back up and running test it by running:
 
 ## Random Comments
 
- After you've installed the project files just add the following line to ANY automation after the **action:**
+ After you've installed the project files just add the following line to **ANY** automation after the **action:**
 ```yaml
   - service: script.comment_for_everything
     data: {}
@@ -182,10 +202,12 @@ To assign a specific word or phrase to an automation do so in the following way:
           entity_id: input_select.alexa_comments
 
 
+## Manual Operation
+Go to a lovelace page containing the dropdown and any time you select a new word or phrase the automation will be triggered to run the script.
 
 # Button Card
 
-How about a button-card for a lovelace page?
+How about a *custom:button-card* for a lovelace page?
 ![Preview of the button-card](https://i.ibb.co/0CdB08m/button-card-image.png)
 ```yaml
 type: custom:button-card
@@ -232,5 +254,5 @@ What people are saying:
 "Comment for Everything is an essential addition to my Smart Home. It makes Home Assistant 1000 times more useful." Betty S.
 "The whole family loves how they never know what Alexa will say next." Bob J.
 "Last night when I closed the garage Alexa said 'man overboard' and my wife thought the Echo was broken! We laughed for hours." Jason T. 
-"It's fantastic! Alexa spits out a random phrase each time my outdoor motion sensor goes off.  Maybe it's another racoon in the trash? I don't know." Terrance W.
+"It's fantastic! Alexa spits out a random phrase each time my outdoor motion sensor goes off.  Maybe it's another racoon in the trash? Who knows?" Terrance W.
 

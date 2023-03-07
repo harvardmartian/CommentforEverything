@@ -1,25 +1,26 @@
-alias: Comment For Everything
-description: Triggered by inputs then outputs to smart speaker.
-trigger:
-  - platform: state
-    entity_id: input_select.alexa_comments
-    id: alexa-select
-  - platform: state
-    entity_id: input_text.alexa_freestyle_comment
-    id: alexa-text
-condition: []
-action:
-  - choose:
-      - conditions:
-          - condition: trigger
-            id: alexa-select
-        sequence:
-          - service: script.alexa_comments
-            data: {}
-      - conditions:
-          - condition: trigger
-            id: alexa-text
-        sequence:
-          - service: script.alexa_freestyle_comment
-            data: {}
-mode: qued
+- id: 'comment_for_everything'
+  alias: Comment For Everything
+  description: Triggered by inputs then outputs to smart speaker.
+  trigger:
+    - platform: state
+      entity_id: input_select.alexa_comments
+      id: alexa-select
+    - platform: state
+      entity_id: input_text.alexa_comment
+      id: alexa-text
+  condition: []
+  action:
+    - choose:
+        - conditions:
+            - condition: trigger
+              id: alexa-select
+          sequence:
+            - service: script.comment_for_everything_devices
+              data: {}
+        - conditions:
+            - condition: trigger
+              id: alexa-text
+          sequence:
+            - service: script.alexa_comment
+              data: {}
+  mode: queued
