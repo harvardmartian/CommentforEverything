@@ -1,10 +1,21 @@
 
+
 The project formerly known as 'My Echo Has Turrets Syndrome' (thank you forum) is back with a new name. Introducting the all new:
 
 > "Amaze your Friends"  "Endless Possibilities!"
+
+![Download Now!](https://i.ibb.co/F56dQ2x/Alexa-Badge2.png)
 # (Alexa has a) Comment for Everything.
 
-Are you ready to add some excitement to your **Home Assistant** automations?! Make your Smart Home come alive! With **Comment for Everything** your Alexa will randomly comment about your home automation activities.  Would you like to hear alexa speak 'good _____ (evening, afternoon, riddance)' when a door closes? Or maybe she'll say 'brrr' while your heater turns on?  Or perhaps she'll exclaim 'aww shucks' when your glass break detector is triggered? 
+Are you ready to add some excitement to your **Home Assistant** automations?! 
+
+Make your Smart Home come alive! 
+
+With **Comment for Everything** your Alexa will randomly comment about your home automation activities!
+
+Would you like to hear Alexa speak '**good _____ (evening, afternoon, riddance)**' when a door closes? Or maybe she'll say **'brrr'** while your heater turns on?  Or perhaps she'll exclaim **'aww shucks'** when your glass break detector is triggered? 
+
+Look no further. (Alexa has a) **Comment For Everything** is for **Home Assistant** and it's absolutely free (now)! **Comment for Everything** is easy to setup! And works with almost **ANY** automation (where the Everything comes from)! 
 
 Here is a small sample of the things she'll say:
 
@@ -21,9 +32,11 @@ Here is a small sample of the things she'll say:
 
 
 
-Alexa has hundreds of secret special words and phrases that she pronounces more expressively! And most importantly randomly. **Comment for Everything** incorporates nearly 300 of these words and phrases into **Home Assistant**! Phrases are spoken with emotion and not in a flat drone. Works with almost any Echo device! She speaks with emotion, clarity and confidence.  We had to dig deep deep into the Echo developer documentation to unlock this secret feature and now we're bringing it to you absolutely free!
+Alexa has hundreds of *secret* special words and phrases that she pronounces more expressively! And most importantly randomly. 
 
-Look no further. (Alexa has a) **Comment For Everything** is for **Home Assistant** and it's absolutely free! **Comment for Everything** is easy to setup! And works with almost ANY automation (where the Everything comes from)! 
+**Comment for Everything** incorporates nearly 300 of these words and phrases into **Home Assistant**! Phrases are spoken with emotion and not in a flat drone.  She speaks with emotion, clarity and confidence.  We had to dig deep deep into the Echo developer documentation to unlock this secret feature and now we're bringing it to you absolutely free!
+
+
 
 
 > "Hours of entertainment!"  "Suprising results!"[**]
@@ -48,12 +61,14 @@ An Echo smart speaker is optional as the Alexa software can be installed on a la
 ## Features
 
 
- - 100% Free! Absolutely no upfront costs or hidden fees.
+ - Now 100% Free! Absolutely no upfront costs or hidden fees. (was ~~3~~ 8 easy payments of $39.99 + hidden fees)
  - Small file sizes. Very few lines of text to add. 
  - Nearly 300 Special Words and Phrases!   
- - Family friendly. Absolutely no distasteful or obscene language. 
- - Works with any number of Echo devices. Multiple Unlimited Echo devices!
- - Bonus input_text helper now included free of charge! 
+ - Family friendly. Absolutely no distasteful or obscene language.  (foul language pack $12.99**)
+ - Works with any number of Echo devices. Multiple Unlimited Echo devices!  (was 2 echo's free and $4.99 for each addtional echo device)
+ - Bonus **input_text** helper now included free of charge! ( a $9.99 value!)
+
+** Sold Out
 
 # Installation
 
@@ -61,21 +76,35 @@ The project consists of 2 helpers a few scripts and a single automation.  All yo
 
 ## Steps
 
- **1a**. If you already have an **input_select.yaml** file: Update it with the helper text from **input_select.yaml** file above.  Do the same for **input_text.yaml**.
+ **1a**. You already have an **input_select.yaml** file: 
 
-**Explanation**: The dropdown helper is the list of words and phrases Alexa already knows how to say more expressively. The text box will allow you to type anything you'd like alexa to say.
+Update it with the helper text from **input_select.yaml** file above.  
 
-**1b**. If you do not have a file named **input_select.yaml** download the project file and add it to your Home Assistant and  add this line to configuration.yaml. Do the same for **input_text.yaml**
+Do the same for **input_text.yaml**.
+
+**What this do?**: The dropdown helper is the list of words and phrases Alexa already knows how to say more expressively. The text box will allow you to type anything you'd like alexa to say.
+
+**1b**. You do not have a file named **input_select.yaml** 
+
+ 1. Download the project file and add it to your Home Assistant config directory. 
+ 2. Add this line to **configuration.yaml**:
 ```yaml
 input_select: !include input_select.yaml
 ```
+Do the same for **input_text.yaml**
 
-**Step 2**. Add the following 3 scripts. to your **scripts.yaml** file and save. Changing the target to an entity id of your own device. 
-The File Editor add-on is as easy as anything. 
 
-**Note:** Use caution when editing any of these files directly. Making a backup of the file before editing can save you from getting into trouble.
+**Note**: If you updated **configuration.yaml** you'll need to restart Home Assistant.
 
-**Explanation**: The scripts send the word or phrase from the helper to your echo device which will say it.
+**Step 2**. Add the following 3 scripts. to your **scripts.yaml** file 
+
+Change the list of echos to entity id(s) of your own device(s). 
+
+Save
+
+**Note:** Use caution when editing any of these files directly. Making a **backup** of the file *before editing* can save you from getting into trouble.
+
+**What this do?**: The scripts send the word or phrase from the helper to your echo device which will say it.
 ```yaml
 comment_for_everything:
   alias: Random Comment for Everything.
@@ -86,17 +115,17 @@ comment_for_everything:
     data:
       option: "{{ state_attr('input_select.alexa_comments', 'options')\n    | reject('eq',\
         \ states('input_select.test'))\n    | list | random }}\n"
+
+
 comment_for_everything_devices:
   alias: Echo devices that will speak the random Comment for Everything phrases
   sequence:
     - repeat:
         for_each:
-          - media_player.avacube
           - media_player.echo_show_5
           - media_player.onelink_safe_sound
           - media_player.fire_tv
-          - media_player.guest_house_dashboard
-          - media_player.smart_life_panel
+          - media_player.fire_tablet
         sequence:
           - condition: template
             value_template: "{{ states('input_select.alexa_comments') != '' }}"
@@ -136,7 +165,7 @@ The main script is what chooses randomnly what your Echo device(s) will exclaim 
 
 **Step 3.** Add the automation.  
 
-**Explanation**: The automation waits for a helper to change and then runs the corresponding script.
+**What this do?**: The automation waits for a helper to change and then runs the corresponding script.
 
 ~~Using the file editor add this to the bottom of your **automation.yaml** file.~~  
 Create an new automation in the GUI and paste over the whole thing with the following:
@@ -181,6 +210,7 @@ After HA is back up and running test it by running:
 	script.comment_for_everything.
 
 # Using Comment for Everything
+Lets see if she can say some stuff....
 
 ## Random Comments
 
@@ -189,7 +219,7 @@ After HA is back up and running test it by running:
   - service: script.comment_for_everything
     data: {}
 ``` 
-Every time this script is run your Echo device(s) will exclaim something randomly from the input_select helper you created in Step 1. 
+**What this do?** Every time this script is run your Echo device(s) will exclaim something randomly from the input_select helper you created in Step 1. 
 
 ## Assigning Specific Word or Phrase
 To assign a specific word or phrase to an automation do so in the following way:
@@ -203,9 +233,16 @@ To assign a specific word or phrase to an automation do so in the following way:
 
 
 ## Manual Operation
-Go to a lovelace page containing the dropdown and any time you select a new word or phrase the automation will be triggered to run the script.
+Any time you'd like to hear Alexa pipe up (pipe up? really?) browse to a lovelace page containing the dropdown and select a new word or phrase. The automation will be triggered to run the script.
 
-# Button Card
+
+
+![Manual Operation](https://i.ibb.co/G37BqFv/Alexa-Chooser.gif)
+ and you've got that witty broad talking again.
+# Lovelace Eye Candy
+Put some make-up on this mouthy woman.
+
+## Button Card
 
 How about a *custom:button-card* for a lovelace page?
 ![Preview of the button-card](https://i.ibb.co/0CdB08m/button-card-image.png)
@@ -217,7 +254,7 @@ tap_action:
   action: call-service
   service: script.comment_for_everything
 tooltip: Alexa Comments
-icon: mdi:account-voice
+show_entity_picture: false
 show_state: false
 show_icon: false
 styles:
@@ -235,24 +272,43 @@ styles:
     - outline: 4px dashed dimgray
 ```
 
+## Custom Icons
+![enter image description here](https://i.ibb.co/tsbSYvS/com40.png)
 
-Using the File Editor add-on to add the following to customize.yaml: Note: If you do not already have a file 'customize.yaml' go ahead and create it.
+
+Add the following to **customize.yaml**: 
+
+Note: If you do not already have a file **customize.yaml** go ahead and create it.
 
 
-    script.alexa_comments:
-      entity_picture: https://i.ibb.co/4Tj5syQ/alexaq.png
     script.comment_for_everything:
-      entity_picture: https://i.ibb.co/4Tj5syQ/alexaq.png
+      entity_picture: https://i.ibb.co/tsbSYvS/com40.png
+    script.comment_for_everything_devices:
+      entity_picture: https://i.ibb.co/tsbSYvS/com40.png
+    automation.comment_for_everything:
+      entity_picture: https://i.ibb.co/tsbSYvS/com40.png
+    script.alexa_comment:
+      entity_picture: https://i.ibb.co/cbNcHNz/48.png
 
-A restart is required to see results when you edit customize.yaml...
+A **restart** is required to see results when you edit **customize.yaml**...
 
 The Alexa Developer Documentation links have the information that is used for this project starts [here](https://developer.amazon.com/en-US/docs/alexa/custom-skills/speechcon-reference-interjections.html).
 
 # Testamonials
 
 What people are saying:
-"Comment for Everything is an essential addition to my Smart Home. It makes Home Assistant 1000 times more useful." Betty S.
-"The whole family loves how they never know what Alexa will say next." Bob J.
-"Last night when I closed the garage Alexa said 'man overboard' and my wife thought the Echo was broken! We laughed for hours." Jason T. 
-"It's fantastic! Alexa spits out a random phrase each time my outdoor motion sensor goes off.  Maybe it's another racoon in the trash? Who knows?" Terrance W.
+
+> "**Comment for Everything** is an essential addition to my Smart Home. It
+> makes **Home Assistant** 1000 times more useful." Betty S. - Chicago IL 
+> 
+> "The whole family loves how they never know what Alexa will say next."  Bob J. - Estonia (near russian border)
+
+> "Last night when I closed the garage Alexa said 'man overboard' and my
+> wife thought the Echo was broken! We laughed for hours." Jason T. - Ohio
+
+> "It's fantastic! Alexa spits out a random phrase each time my outdoor
+> motion sensor goes off.  Maybe it's another racoon in the trash? Who
+> knows?" Terrance W. Cheyanne Mountain
+
+
 

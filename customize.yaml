@@ -1,4 +1,24 @@
+######################################################
+###                                                ###
+##                                                  ##
+#              Comment for Everything                #
+#                       Icons                        #
+#                                                    #
+#                                                    #
 script.comment_for_everything:
-  entity_picture: https://i.ibb.co/4Tj5syQ/alexaq.png
-script.random_comment_for_everything:
-  entity_picture: https://i.ibb.co/4Tj5syQ/alexaq.png
+  entity_picture: https://i.ibb.co/tsbSYvS/com40.png
+script.comment_for_everything_devices:
+  entity_picture: https://i.ibb.co/tsbSYvS/com40.png
+automation.comment_for_everything:
+  entity_picture: https://i.ibb.co/tsbSYvS/com40.png
+script.alexa_comment:
+  entity_picture: https://i.ibb.co/cbNcHNz/48.png
+input_select.alexa_comments:
+  entity_picture: https://i.ibb.co/cbNcHNz/48.png
+input_text.alexa_comment:
+  entity_picture: https://i.ibb.co/cbNcHNz/48.png
+#                                                    #
+#                                                    #
+#                                                   ##
+###                                                ###
+######################################################
