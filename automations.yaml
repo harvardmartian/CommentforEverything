@@ -3,7 +3,7 @@
   description: Triggered by inputs then outputs to smart speaker.
   trigger:
     - platform: state
-      entity_id: input_select.alexa_comments
+      entity_id: input_select.comment_for_everything
       id: alexa-select
     - platform: state
       entity_id: input_text.alexa_comment

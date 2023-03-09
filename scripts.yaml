@@ -9,12 +9,12 @@ comment_for_everything_devices:
           - media_player.fire_tv
         sequence:
           - condition: template
-            value_template: "{{ states('input_select.alexa_comments') != '' }}"
+            value_template: "{{ states('input_select.comment_for_everything') != '' }}"
           - service: notify.alexa_media
             data_template:
               message: >-
                 <say-as interpret-as="interjection">{{
-                states('input_select.alexa_comments') }}</say-as>
+                states('input_select.comment_for_everything') }}</say-as>
               data:
                 type: tts
               target: "{{ repeat.item }}"
@@ -24,13 +24,13 @@ comment_for_everything:
   sequence:
   - service: input_select.select_option
     target:
-      entity_id: input_select.alexa_comments
+      entity_id: input_select.comment_for_everything
     data:
-      option: "{{ state_attr('input_select.alexa_comments', 'options')\n    | reject('eq',\
+      option: "{{ state_attr('input_select.comment_for_everything', 'options')\n    | reject('eq',\
         \ states('input_select.test'))\n    | list | random }}\n"
 # this script is for anything you type into the text box. again list each echo device you'd like to hear
 alexa_comment:
-  alias: Comment for Everything script
+  alias: another Comment for Everything script
   sequence:
     - repeat:
         for_each:

@@ -13,7 +13,7 @@ automation.comment_for_everything:
   entity_picture: https://i.ibb.co/tsbSYvS/com40.png
 script.alexa_comment:
   entity_picture: https://i.ibb.co/cbNcHNz/48.png
-input_select.alexa_comments:
+input_select.comment_for_everything:
   entity_picture: https://i.ibb.co/cbNcHNz/48.png
 input_text.alexa_comment:
   entity_picture: https://i.ibb.co/cbNcHNz/48.png

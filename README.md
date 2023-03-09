@@ -2,7 +2,7 @@
 
 The project formerly known as 'My Echo Has Turrets Syndrome' (thank you forum) is back with a new name. Introducting the all new:
 
-> "Amaze your Friends"  "Endless Possibilities!"
+> "Amaze your Friends"  "Endless Possibilities!" 
 
 ![Download Now!](https://i.ibb.co/F56dQ2x/Alexa-Badge2.png)
 # (Alexa has a) Comment for Everything.
@@ -34,12 +34,12 @@ Here is a small sample of the things she'll say:
 
 Alexa has hundreds of *secret* special words and phrases that she pronounces more expressively! And most importantly randomly. 
 
-**Comment for Everything** incorporates nearly 300 of these words and phrases into **Home Assistant**! Phrases are spoken with emotion and not in a flat drone.  She speaks with emotion, clarity and confidence.  We had to dig deep deep into the Echo developer documentation to unlock this secret feature and now we're bringing it to you absolutely free!
+**Comment for Everything** incorporates nearly 300 of these words and phrases into **Home Assistant**! Phrases are spoken with emotion and not in a flat drone.  She speaks with emotion, clarity and confidence.  We had to dig **deep** deep into the Echo developer documentation to unlock this secret feature and now we're bringing it to you absolutely free!
 
 
 
 
-> "Hours of entertainment!"  "Suprising results!"[**]
+> "Hours of entertainment!"  "Suprising results!"[**] "Alexa finally has a soul" "Almost sentient!" 
 
  ** actual user comments
 
@@ -66,13 +66,14 @@ An Echo smart speaker is optional as the Alexa software can be installed on a la
  - Nearly 300 Special Words and Phrases!   
  - Family friendly. Absolutely no distasteful or obscene language.  (foul language pack $12.99**)
  - Works with any number of Echo devices. Multiple Unlimited Echo devices!  (was 2 echo's free and $4.99 for each addtional echo device)
+ - New improved **AI** algorithm!
  - Bonus **input_text** helper now included free of charge! ( a $9.99 value!)
 
 ** Sold Out
 
 # Installation
 
-The project consists of 2 helpers a few scripts and a single automation.  All you need to do is copy and past a few lines of text into each one of these files restart HA and you'll be hearing Alexa comments in no time!
+The **Comment for Everything** project consists of 2 helpers a few scripts and a single automation.  All you need to do is copy and past a few lines of text into each one of these files restart HA and you'll be hearing Alexa comments in no time!
 
 ## Steps
 
@@ -111,9 +112,9 @@ comment_for_everything:
   sequence:
   - service: input_select.select_option
     target:
-      entity_id: input_select.alexa_comments
+      entity_id: input_select.comment_for_everything
     data:
-      option: "{{ state_attr('input_select.alexa_comments', 'options')\n    | reject('eq',\
+      option: "{{ state_attr('input_select.comment_for_everything', 'options')\n    | reject('eq',\
         \ states('input_select.test'))\n    | list | random }}\n"
 
 
@@ -128,12 +129,12 @@ comment_for_everything_devices:
           - media_player.fire_tablet
         sequence:
           - condition: template
-            value_template: "{{ states('input_select.alexa_comments') != '' }}"
+            value_template: "{{ states('input_select.comment_for_everything') != '' }}"
           - service: notify.alexa_media
             data_template:
               message: >-
                 <say-as interpret-as="interjection">{{
-                states('input_select.alexa_comments') }}</say-as>
+                states('input_select.comment_for_everything') }}</say-as>
               data:
                 type: tts
               target: "{{ repeat.item }}"
@@ -175,7 +176,7 @@ alias: Comment For Everything
 description: Triggered by inputs then outputs to smart speaker.
 trigger:
   - platform: state
-    entity_id: input_select.alexa_comments
+    entity_id: input_select.comment_for_everything
     id: alexa-select
   - platform: state
     entity_id: input_text.alexa_comment
@@ -229,7 +230,7 @@ To assign a specific word or phrase to an automation do so in the following way:
         data:
           option: good morning # remove 'good morning' and type your chosen word or phrase there
         target:
-          entity_id: input_select.alexa_comments
+          entity_id: input_select.comment_for_everything
 
 
 ## Manual Operation
@@ -298,17 +299,14 @@ The Alexa Developer Documentation links have the information that is used for th
 
 What people are saying:
 
-> "**Comment for Everything** is an essential addition to my Smart Home. It
-> makes **Home Assistant** 1000 times more useful." Betty S. - Chicago IL 
+> "**Comment for Everything** is an essential addition to my Smart Home. It makes **Home Assistant** 1000 times more useful." Betty S. - Chicago IL 
+
 > 
-> "The whole family loves how they never know what Alexa will say next."  Bob J. - Estonia (near russian border)
+> "The whole family loves how they never know *when* or *what* Alexa will say next! I have **Comment for Everything** setup in over twenty **Home Assistant** automations."  Bob J. - Estonia (near russian border)
 
-> "Last night when I closed the garage Alexa said 'man overboard' and my
-> wife thought the Echo was broken! We laughed for hours." Jason T. - Ohio
+> "Last night when I closed the garage Alexa said 'man overboard' and my wife thought the Echo was broken! We laughed for hours. Thank you **Comment for Everything**. You saved my marriage." Jason T. - Ohio
 
-> "It's fantastic! Alexa spits out a random phrase each time my outdoor
-> motion sensor goes off.  Maybe it's another racoon in the trash? Who
-> knows?" Terrance W. Cheyanne Mountain
+> "**Comment for Everything** is fantastic! Alexa spits out a random phrase each time my outdoor motion sensor goes off.  Maybe it's another racoon in the trash? Who knows?" Terrance W. East Sloon GA
 
 
 
