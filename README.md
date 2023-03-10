@@ -13,7 +13,7 @@ Make your Smart Home come alive!
 
 With **Comment for Everything** your Alexa will randomly comment about your home automation activities!
 
-Would you like to hear Alexa speak '**good _____ (evening, afternoon, riddance)**' when a door closes? Or maybe she'll say **'brrr'** while your heater turns on?  Or perhaps she'll exclaim **'aww shucks'** when your glass break detector is triggered? 
+Would you like to hear Alexa speak '**good _____ (evening, afternoon, riddance)**' when a door closes? Or maybe she'll say **'brrr'** while your heater turns on?  Or perhaps you'll hear Alexa exclaim **'aww shucks'** when your glass break detector is triggered? 
 
 Look no further. (Alexa has a) **Comment For Everything** is for **Home Assistant** and it's absolutely free (now)! **Comment for Everything** is easy to setup! And works with almost **ANY** automation (where the Everything comes from)! 
 
@@ -69,7 +69,7 @@ An Echo smart speaker is optional as the Alexa software can be installed on a la
  - New improved **AI** algorithm!
  - Bonus **input_text** helper now included free of charge! ( a $9.99 value!)
 
-** Sold Out
+** discontinued
 
 # Installation
 
@@ -83,7 +83,7 @@ Update it with the helper text from **input_select.yaml** file above.
 
 Do the same for **input_text.yaml**.
 
-**What this do?**: The dropdown helper is the list of words and phrases Alexa already knows how to say more expressively. The text box will allow you to type anything you'd like alexa to say.
+**What does this do?**: The dropdown helper is the list of words and phrases Alexa already knows how to say more expressively. The text box will allow you to type anything you'd like alexa to say.
 
 **1b**. You do not have a file named **input_select.yaml** 
 
@@ -105,7 +105,7 @@ Save
 
 **Note:** Use caution when editing any of these files directly. Making a **backup** of the file *before editing* can save you from getting into trouble.
 
-**What this do?**: The scripts send the word or phrase from the helper to your echo device which will say it.
+**What does this do?**: The scripts send the word or phrase from the helper to your echo device which will say it.
 ```yaml
 comment_for_everything:
   alias: Random Comment for Everything.
@@ -166,7 +166,7 @@ The main script is what chooses randomnly what your Echo device(s) will exclaim 
 
 **Step 3.** Add the automation.  
 
-**What this do?**: The automation waits for a helper to change and then runs the corresponding script.
+**What does this do?**: The automation waits for a helper to change and then runs the corresponding script.
 
 ~~Using the file editor add this to the bottom of your **automation.yaml** file.~~  
 Create an new automation in the GUI and paste over the whole thing with the following:
@@ -220,7 +220,7 @@ Lets see if she can say some stuff....
   - service: script.comment_for_everything
     data: {}
 ``` 
-**What this do?** Every time this script is run your Echo device(s) will exclaim something randomly from the input_select helper you created in Step 1. 
+**What does this do?** Every time this script is run your Echo device(s) will exclaim something randomly from the input_select helper you created in Step 1. 
 
 ## Assigning Specific Word or Phrase
 To assign a specific word or phrase to an automation do so in the following way:
