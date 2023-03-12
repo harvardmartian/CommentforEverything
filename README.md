@@ -1,5 +1,4 @@
 
-
 The project formerly known as 'My Echo Has Turrets Syndrome' (thank you forum) is back with a new name. Introducting the all new:
 
 > "Amaze your Friends"  "Endless Possibilities!" 
@@ -276,20 +275,27 @@ styles:
 ## Custom Icons
 ![enter image description here](https://i.ibb.co/tsbSYvS/com40.png)
 
+If you do not already have a file **customize.yaml** ~~go ahead and create it.~~ download the project file above and add it to your Home Assistant config directory.
 
-Add the following to **customize.yaml**: 
+OR
 
-Note: If you do not already have a file **customize.yaml** go ahead and create it.
+Add the following to your existing **customize.yaml**: 
+
+
 
 
     script.comment_for_everything:
-      entity_picture: https://i.ibb.co/tsbSYvS/com40.png
+      entity_picture: https://i.ibb.co/DwjjYBF/com40c.png
     script.comment_for_everything_devices:
-      entity_picture: https://i.ibb.co/tsbSYvS/com40.png
+      entity_picture: https://i.ibb.co/m8YS0Zk/com50c.png
     automation.comment_for_everything:
-      entity_picture: https://i.ibb.co/tsbSYvS/com40.png
+      entity_picture: https://i.ibb.co/DwjjYBF/com40c.png
     script.alexa_comment:
-      entity_picture: https://i.ibb.co/cbNcHNz/48.png
+      entity_picture: https://i.ibb.co/m8YS0Zk/com50c.png
+    input_select.comment_for_everything:
+      entity_picture: https://i.ibb.co/DwjjYBF/com40c.png
+    input_text.alexa_comment:
+      entity_picture: https://i.ibb.co/m8YS0Zk/com50c.png
 
 A **restart** is required to see results when you edit **customize.yaml**...
 
@@ -307,6 +313,3 @@ What people are saying:
 > "Last night when I closed the garage Alexa said 'man overboard' and my wife thought the Echo was broken! We laughed for hours. Thank you **Comment for Everything**. You saved my marriage." Jason T. - Ohio
 
 > "**Comment for Everything** is fantastic! Alexa spits out a random phrase each time my outdoor motion sensor goes off.  Maybe it's another racoon in the trash? Who knows?" Terrance W. East Sloon GA
-
-
-

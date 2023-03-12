@@ -6,17 +6,17 @@
 #                                                    #
 #                                                    #
 script.comment_for_everything:
-  entity_picture: https://i.ibb.co/tsbSYvS/com40.png
+  entity_picture: https://i.ibb.co/DwjjYBF/com40c.png
 script.comment_for_everything_devices:
-  entity_picture: https://i.ibb.co/tsbSYvS/com40.png
+  entity_picture: https://i.ibb.co/m8YS0Zk/com50c.png
 automation.comment_for_everything:
-  entity_picture: https://i.ibb.co/tsbSYvS/com40.png
+  entity_picture: https://i.ibb.co/DwjjYBF/com40c.png
 script.alexa_comment:
-  entity_picture: https://i.ibb.co/cbNcHNz/48.png
+  entity_picture: https://i.ibb.co/m8YS0Zk/com50c.png
 input_select.comment_for_everything:
-  entity_picture: https://i.ibb.co/cbNcHNz/48.png
+  entity_picture: https://i.ibb.co/DwjjYBF/com40c.png
 input_text.alexa_comment:
-  entity_picture: https://i.ibb.co/cbNcHNz/48.png
+  entity_picture: https://i.ibb.co/m8YS0Zk/com50c.png
 #                                                    #
 #                                                    #
 #                                                   ##
