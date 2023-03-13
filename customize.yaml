@@ -1,10 +1,13 @@
-######################################################
-###                                                ###
-##                                                  ##
-#              Comment for Everything                #
-#                       Icons                        #
-#                                                    #
-#                                                    #
+###########################################################
+###                                                     ###
+#  ____ ____ _  _ _  _ ____ _  _ ___    ____ ____ ____   ##
+#  |    |  | |\/| |\/| |___ |\ |  |     |___ |  | |__/    #
+#  |___ |__| |  | |  | |___ | \|  |     |    |__| |  \    # 
+#                                                         #                
+#  ____ _  _ ____ ____ _   _ ___ _  _ _ _  _ ____         #
+#  |___ |  | |___ |__/  \_/   |  |__| | |\ | | __         #
+#  |___  \/  |___ |  \   |    |  |  | | | \| |__]         #
+#                                                         #
 script.comment_for_everything:
   entity_picture: https://i.ibb.co/DwjjYBF/com40c.png
 script.comment_for_everything_devices:
@@ -17,8 +20,8 @@ input_select.comment_for_everything:
   entity_picture: https://i.ibb.co/DwjjYBF/com40c.png
 input_text.alexa_comment:
   entity_picture: https://i.ibb.co/m8YS0Zk/com50c.png
-#                                                    #
-#                                                    #
-#                                                   ##
-###                                                ###
-######################################################
+#                                                         #
+#                                                         #
+#                                                        ##
+###                                                     ###
+###########################################################
