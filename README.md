@@ -301,7 +301,7 @@ A **restart** is required to see results when you edit **customize.yaml**...
 
 The Alexa Developer Documentation links have the information that is used for this project starts [here](https://developer.amazon.com/en-US/docs/alexa/custom-skills/speechcon-reference-interjections.html).
 
-# Testamonials
+# Testimonials
 
 What people are saying:
 
