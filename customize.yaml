@@ -4,10 +4,7 @@
 #  |    |  | |\/| |\/| |___ |\ |  |     |___ |  | |__/    #
 #  |___ |__| |  | |  | |___ | \|  |     |    |__| |  \    # 
 #                                                         #                
-#  ____ _  _ ____ ____ _   _ ___ _  _ _ _  _ ____         #
-#  |___ |  | |___ |__/  \_/   |  |__| | |\ | | __         #
-#  |___  \/  |___ |  \   |    |  |  | | | \| |__]         #
-#                                                         #
+
 script.comment_for_everything:
   entity_picture: https://i.ibb.co/DwjjYBF/com40c.png
 script.comment_for_everything_devices:
@@ -21,6 +18,9 @@ input_select.comment_for_everything:
 input_text.alexa_comment:
   entity_picture: https://i.ibb.co/m8YS0Zk/com50c.png
 #                                                         #
+#  ____ _  _ ____ ____ _   _ ___ _  _ _ _  _ ____         #
+#  |___ |  | |___ |__/  \_/   |  |__| | |\ | | __         #
+#  |___  \/  |___ |  \   |    |  |  | | | \| |__]         #
 #                                                         #
 #                                                        ##
 ###                                                     ###

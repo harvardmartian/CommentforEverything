@@ -167,7 +167,7 @@ The main script is what chooses randomnly what your Echo device(s) will exclaim 
 
 **What does this do?**: The automation waits for a helper to change and then runs the corresponding script.
 
-~~Using the file editor add this to the bottom of your **automation.yaml** file.~~  
+~~Using the file editor add this to the bottom of your **automations.yaml** file.~~  
 Create an new automation in the GUI and paste over the whole thing with the following:
 
 ```yaml
@@ -239,7 +239,7 @@ Any time you'd like to hear Alexa pipe up (pipe up? really?) browse to a lovelac
 
 ![Manual Operation](https://i.ibb.co/G37BqFv/Alexa-Chooser.gif)
  and you've got that witty broad talking again.
-# Lovelace Eye Candy
+# Buttons & Icons
 Put some make-up on this mouthy woman.
 
 ## Button Card
