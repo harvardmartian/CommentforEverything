@@ -1,6 +1,5 @@
-# list each one of your echo devices in the script below
+# this one does the hard work of sending the comment to the device.  list each one of your echo devices after the for_each line
 comment_for_everything_devices:
-  alias: Echo devices that will speak the random Comment for Everything phrases
   sequence:
     - repeat:
         for_each:
@@ -18,9 +17,8 @@ comment_for_everything_devices:
               data:
                 type: tts
               target: "{{ repeat.item }}"
-# this script will pick a random comment from the dropdown and the automation will send it to the script above.
+# this script will pick a RANDOM COMMENT from the dropdown.  The automation.comment_for_everything will pick it up and send it to the script above.
 comment_for_everything:
-  alias: Random Comment for Everything.
   sequence:
   - service: input_select.select_option
     target:
