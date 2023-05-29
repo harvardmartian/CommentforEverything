@@ -245,7 +245,7 @@ Put some make-up on this mouthy woman.
 ## Button Card
 
 How about a *custom:button-card* for a lovelace page?
-![Preview of the button-card](https://i.ibb.co/0CdB08m/button-card-image.png)
+![Preview of the button-card](https://i.ibb.co/pWCgwkT/com300.png)
 ```yaml
 type: custom:button-card
 entity: script.comment_for_everything
@@ -313,3 +313,10 @@ What people are saying:
 > "Last night when I closed the garage Alexa said 'man overboard' and my wife thought the Echo was broken! We laughed for hours. Thank you **Comment for Everything**. You saved my marriage." Jason T. - Ohio
 
 > "**Comment for Everything** is fantastic! Alexa spits out a random phrase each time my outdoor motion sensor goes off.  Maybe it's another racoon in the trash? Who knows?" Terrance W. East Sloon GA
+
+![Download Now!](https://i.ibb.co/F56dQ2x/Alexa-Badge2.png)
+
+## See Also
+
+# (Alexa has)Sounds for Everything
+! [Sounds for Everything] (https://i.ibb.co/bK5stFp/SOUNDS-WAVE.png)
