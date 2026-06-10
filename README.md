@@ -9,10 +9,11 @@
   - [Helpers](#helpers)
   - [Scripts](#scripts)
   - [Automation](#automation)
-- [Using Comment For Everything](#using)
-  - [Random Comment](#random-comment)
-  - [Pre Selected Comment](#pre)
-  - [Custom Phrase](#manually-choosing-a-phrase)
+- [Using in Automations or Scripts](#using-comment-for-everything)
+  - [Random Comment](#random-comments)
+  - [Pre Selected Comment](#assigning-specific-word-or-phrase)
+- [Using Realtime]{#using-realtime)
+  - [Manually Select](#manually-choosing-a-phrase)
  
    
 - [Why](#why)
@@ -282,7 +283,7 @@ To assign a specific word or phrase to an automation do so in the following way:
           option: good morning # remove 'good morning' and type your chosen word or phrase there
         target:
           entity_id: input_select.comment_for_everything
-
+### Using Realtime
 ## Manually Choosing A Phrase
 
 Any time you'd like to hear Alexa pipe up (pipe up? really?) browse to a lovelace page containing the dropdown and select a new word or phrase. The automation will be triggered to run the script.
