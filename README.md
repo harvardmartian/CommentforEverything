@@ -10,6 +10,11 @@
   - [Scripts](#scripts)
   - [Automation](#automation)
 - [Using](#using)
+  - [Random Comment](#random)
+  - [Pre Selected Comment](#pre)
+  - [Custom Phrase](#custom)
+ 
+   
 - [Why](#why)
 
 - [User Testimonials](#usertestimonials)
@@ -249,7 +254,7 @@ After HA is back up and running test it by running:
 
 ___
 
-## Using >Comment for Everything
+## Using Comment for Everything
 
 Lets see if she can say some stuff....
 
@@ -282,7 +287,7 @@ Any time you'd like to hear Alexa pipe up (pipe up? really?) browse to a lovelac
 ![Manual Operation](https://i.ibb.co/G37BqFv/Alexa-Chooser.gif)
  and you've got that witty broad talking again.
 
-# Lovelace Buttons & Icons
+## Lovelace Buttons & Icons
 
 Put some make-up on this mouthy woman.
 
