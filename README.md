@@ -5,10 +5,11 @@
 
 - [requirements](#requirements)
 
-- [Installation](#installation)
+- [Installation](#installation) Get the needed code here.
   - [Helpers](#helpers)
   - [Scripts](#scripts)
-  - [Automation](#automations)
+  - [Automation](#automation)
+- [Using](#using)
 - [Why](#why)
 
 - [User Testimonials](#usertestimonials)
@@ -30,13 +31,17 @@
 
 <mark>"Amaze your Friends" "Endless Possibilities!"</mark>
 
-Are you ready to add some excitement to your [**Home Assistant**](https://www.home-assistant.io) automations?! 
+Add excitement to your [**Home Assistant**](https://www.home-assistant.io) automations?! 
 
 Make your Smart Home come alive! 
 
-With **Comment for Everything** your Alexa will randomly comment about your home automation activities!
+With **Comment for Everything** 
 
-Would you like to hear Alexa speak '**good _____ (evening, afternoon, riddance)**' when a door closes? Or maybe she'll say **'brrr'** while your heater turns on?  Or perhaps Alexa will exclaim **'aww shucks'** when your glass break detector is triggered? 
+With Alexa's built in comments she will randomly comment about anything happening in Home Assistant!!
+
+Would you like to hear Alexa speak '**good _____ (evening, afternoon, riddance)**' when a door closes? 
+Or maybe she'll say **'brrr'** while your heater turns on?  
+Or perhaps Alexa will exclaim **'aww shucks'** when your glass break detector is triggered? 
 ___
 (Alexa has a) **Comment For Everything** is for **Home Assistant**. It's absolutely free! ** Comment for Everything** Easy to setup (mostly cut and paste text)! Works with almost **ANY** automation (where the Everything comes from)! 
 
@@ -93,8 +98,8 @@ _____
 ## Requirements
 
 - **Home Assistant** deployed and running
-- **Alexa Media Player** integration
-- Echo smart speaker (optional)
+- **Alexa Media Player** (HACS) integration
+- Alexa (app) or Echo smart speaker 
 
 An Echo smart speaker is optional as the Alexa software can be installed on a laptop, computer, tablet, or smartphone.
 
@@ -244,7 +249,7 @@ After HA is back up and running test it by running:
 
 ___
 
-# Using Comment for Everything
+## Using >Comment for Everything
 
 Lets see if she can say some stuff....
 
