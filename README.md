@@ -10,19 +10,20 @@
   - [Scripts](#scripts)
   - [Automation](#automation)
 - [Using Comment For Everything](#using)
-  - [Random Comment](#random)
+  - [Random Comment](#random-comment)
   - [Pre Selected Comment](#pre)
-  - [Custom Phrase](#custom)
+  - [Custom Phrase](#manually-choosing-a-phrase)
  
    
 - [Why](#why)
+- [How](#how-does-this-work)
 
-- [User Testimonials](#usertestimonials)
+- [User Testimonials](#user-testimonials)
 
 
 
 - [Graphics](#lovelace)
-- [See Also](#seealso)
+- [See Also](#see-also)
 - 
 # requirements Requirements
 
@@ -258,7 +259,7 @@ ___
 
 Lets see if she can say some stuff....
 
-## random
+
 ## Random Comments
 
  After you've installed the project files just add the following line to **ANY** automation after the **action:**
@@ -289,7 +290,7 @@ Any time you'd like to hear Alexa pipe up (pipe up? really?) browse to a lovelac
 ![Manual Operation](https://i.ibb.co/G37BqFv/Alexa-Chooser.gif)
  and you've got that witty broad talking again.
 
-## Lovelace Buttons & Icons
+## Buttons & Icons for Lovelace
 
 Put some make-up on this mouthy woman.
 
@@ -353,7 +354,7 @@ A **restart** is required to see results when you edit **customize.yaml**...
 
 The Alexa Developer Documentation links have the information that is used for this project starts [here](https://developer.amazon.com/en-US/docs/alexa/custom-skills/speechcon-reference-interjections.html).
 
-# Testimonials
+## User Testimonials
 
 What people are saying:
 
