@@ -6,14 +6,14 @@
 - [requirements](#requirements)
 
 - [Installation](#installation)
-
+  - [Helpers](#helpers)
+  - [Scripts](#scripts)
+  - [Automation](#automations)
 - [Why](#why)
 
 - [User Testimonials](#usertestimonials)
 
-- [Helpers](#helpers)
-- [Scripts](#scripts)
-- [Automation](#automations)
+
 
 - [Graphics](#graphics)
 - [See Also](#seealso)
