@@ -9,7 +9,7 @@
   - [Helpers](#helpers)
   - [Scripts](#scripts)
   - [Automation](#automation)
-- [Using](#using)
+- [Using Comment For Everything](#using)
   - [Random Comment](#random)
   - [Pre Selected Comment](#pre)
   - [Custom Phrase](#custom)
@@ -21,7 +21,7 @@
 
 
 
-- [Graphics](#graphics)
+- [Graphics](#lovelace)
 - [See Also](#seealso)
 - 
 # requirements Requirements
@@ -258,6 +258,7 @@ ___
 
 Lets see if she can say some stuff....
 
+## random
 ## Random Comments
 
  After you've installed the project files just add the following line to **ANY** automation after the **action:**
@@ -269,6 +270,7 @@ Lets see if she can say some stuff....
 
 **What does this do?** Every time this script is run your Echo device(s) will exclaim something randomly from the input_select helper you created in Step 1. 
 
+##pre
 ## Assigning Specific Word or Phrase
 
 To assign a specific word or phrase to an automation do so in the following way:
