@@ -1,8 +1,8 @@
-#features Features
+# features Features
 
-#installation Installation
+# installation Installation
 
-#requirements Requirements
+# requirements Requirements
 
 ###### The project formerly known as 'My Echo Has Turrets Syndrome' (thank you forum) is back with a new name.
 
